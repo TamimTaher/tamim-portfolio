@@ -13,9 +13,9 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   return (
-    <section>
+    <section className="max-w-2xl mx-auto mt-8 md:mt-10 lg:mt-12 pl-4 md:pl-0">
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
+        <h1 className="font-medium text-2xl mb-8 tracking-tighter">Blog</h1>
       </BlurFade>
       {posts
         .sort((a, b) => {
@@ -33,10 +33,10 @@ export default async function BlogPage() {
               href={`/blog/${post.slug}`}
             >
               <div className="w-full flex flex-col">
-                <p className="tracking-tight">{post.metadata.title}</p>
-                <p className="h-6 text-xs text-muted-foreground">
-                  {post.metadata.publishedAt}
-                </p>
+              <p className="tracking-tight">{post.metadata.title}</p>
+              <p className="h-6 text-xs text-muted-foreground">
+                {post.metadata.publishedAt}
+              </p>
               </div>
             </Link>
           </BlurFade>

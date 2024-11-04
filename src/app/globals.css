@@ -33,6 +33,16 @@
       --ring: 0 0% 3.9%;
 
       --radius: 0.5rem;
+
+      --color-1: 0 100% 63%;
+
+      --color-2: 270 100% 63%;
+
+      --color-3: 210 100% 63%;
+
+      --color-4: 195 100% 63%;
+
+      --color-5: 90 100% 63%;
     }
 
     .dark {
@@ -63,6 +73,11 @@
       --border: 0 0% 14.9%;
       --input: 0 0% 14.9%;
       --ring: 0 0% 83.1%;
+      --color-1: 0 100% 63%;
+      --color-2: 270 100% 63%;
+      --color-3: 210 100% 63%;
+      --color-4: 195 100% 63%;
+      --color-5: 90 100% 63%;
     }
   }
 
@@ -73,6 +88,9 @@
     body {
       @apply bg-background text-foreground;
     }
+    .hero-ring {
+      @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-gray-300/10 shadow-[0_0_80px_inset] shadow-gray-500/10;
+    }    
   }
 
   h3 code {

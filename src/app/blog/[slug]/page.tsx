@@ -65,7 +65,7 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog">
+    <section id="blog" className="max-w-2xl mx-auto mt-8 md:mt-10 lg:mt-12 pl-4 md:pl-0">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -102,6 +102,7 @@ export default async function Blog({
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
+      <div className="p-10" />
     </section>
   );
 }

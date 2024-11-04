@@ -1,0 +1,120 @@
+---
+title: "LeetCode: All Topics Problem 1. Two Sum"
+publishedAt: "2024-10-17"
+summary: "My solution and explanation for LeetCode: All Topics Problem 1. Two Sum."
+---
+
+Hi there!
+
+Today I'll be showing you my solution to LeetCode: All Topics Problem 1. Two Sum.
+
+## LeetCode Problem: Two Sum (Solution)
+
+Here's my solution:
+
+```python
+class Solution(object):
+    def twoSum(self, nums, target):
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+```
+
+## LeetCode Problem: Two Sum (Explanation)
+
+Here's my explanation:
+
+### 1. Class Solution
+
+```python
+class Solution(object):
+```
+- This defines a class called **Solution**.
+- In Python, a class is a blueprint for creating objects. It groups related methods (functions) together.
+
+### 2. Function Definition
+
+```python
+def twoSum(self, nums, target):
+```
+- This defines a method named **twoSum** inside the **Solution** class.
+- **self** is a reference to the current instance of the class (**Solution**). It's always the first parameter in a method inside a class and allows the method to access instance variables and other methods within the class.
+- **nums** is the list of integers provided as input, where the function will search for two numbers that add up to the **target**.
+- **target** is the integer value that the function needs to find as the sum of two distinct numbers from **nums**.
+
+### 3. Outer for Loop (Iterating over the list)
+
+```python
+for i in range(len(nums)):
+```
+- This loop iterates over the list **nums** using index **i**. It goes from the first element to the second-to-last element.
+- **i** is the index of the first number that will be checked.
+
+### 4. Inner for Loop (Checking pairs)
+
+```python
+for j in range(i+1, len(nums)):
+```
+- For each number **nums[i]**, this inner loop checks all the subsequent numbers in the list (those with indices greater than **i**). It starts from **i + 1** to avoid checking the same number twice.
+- **j** is the index of the second number that will be checked.
+
+### 5. Condition to Check if the Two Numbers Add Up to the Target
+
+```python
+if nums[i] + nums[j] == target:
+```
+- This line checks if the sum of **nums[i]** and **nums[j]** equals the **target**.
+- If the condition is true, meaning the two numbers add up to the target, the function returns the indices of these two numbers as a list: **[i, j]**.
+
+### 6. Return the Indices of the Two Numbers
+
+```python
+return [i, j]
+```
+- When a pair of numbers that adds up to the target is found, the function returns a list containing their indices: **[i, j]**.
+
+### Time Complexity
+
+The time complexity of this solution is **O(n²)**, where **n** is the number of elements in **nums**.
+- This is because, for each element in the outer loop, the inner loop iterates over the remaining elements, leading to a nested loop structure.
+- As a result, this approach is less efficient for large input sizes.
+
+### Example
+
+Suppose **nums = [2, 7, 11, 15]** and **target = 9**.
+
+- First iteration: (**i = 0** and **nums[i] = 2**):
+  - Inner loop starts with **j = 1** (**nums[j] = 7**):
+    - **2 + 7 == 9**, so the function returns **[0, 1]**.
+
+The result is **[0, 1]**, which are the indices of the two numbers that sum up to the target.
+
+## LeetCode Problem: Two Sum (One of the Fastest Solution)
+
+You've looked at my solution. But what if you want to do it in **O(n)** time?**O(n)** space? One of the fastest solutions I've seen in LeetCode is:
+
+```python
+class Solution(object):
+ def twoSum(self, nums, target):
+    num_map = {}  
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_map:
+            return [num_map[complement], i] 
+        num_map[num] = i  
+    return [] 
+```
+
+Here's what so good about this solution:
+
+- **O(n)** time complexity
+- **O(n)** space complexity
+
+## Conclusion
+
+I hope you enjoyed my solution to LeetCode: All Topics Problem 1. Two Sum. I've also provided an explanation of how it works. Then, I have also provided the fastest solution in LeetCode, which is **O(n)** time and space complexity.
+
+## References
+
+- [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)

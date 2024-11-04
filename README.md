@@ -15,7 +15,7 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/TamimTaher/tamim-portfolio.git
+   git clone
    ```
 
 2. Move to the cloned directory
